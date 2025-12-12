@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 06: Encryption Tool (Modular)</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-gray-900 text-gray-200 font-sans min-h-screen flex flex-col">
+
+    <!-- Header -->
+    <header class="bg-gray-800 border-b border-gray-700 p-4 shadow-lg">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-xl font-bold text-blue-400 flex items-center gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" /></svg>
+                LAB 06: Encryption Tool
+            </h1>
+            <select id="main-task-selector" class="bg-gray-700 border border-gray-600 rounded p-2 text-sm font-medium text-white hover:bg-gray-600">
+                <option value="task1">Task 1: Caesar Analysis</option>
+                <option value="task2">Task 2: Substitution Solver</option>
+                <option value="task3">Task 3: Vigenère Analysis</option>
+                <option value="task4">Task 4: DES (Manual)</option>
+                <option value="task5">Task 5: AES (Manual)</option>
+            </select>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="flex-1 container mx-auto p-4 flex flex-col md:flex-row gap-6">
+        
+        <!-- Sidebar Navigation 
+        <nav class="md:w-64 flex flex-col gap-2 shrink-0">
+            <button id="nav-task1" class="tab-btn p-3 bg-gray-800 rounded hover:bg-gray-700 text-left font-medium transition-colors border-l-4 border-transparent">Task 1: Caesar Analysis</button>
+            <button id="nav-task2" class="tab-btn p-3 bg-gray-800 rounded hover:bg-gray-700 text-left font-medium transition-colors border-l-4 border-transparent">Task 2: Substitution Solver</button>
+            <button id="nav-task3" class="tab-btn p-3 bg-gray-800 rounded hover:bg-gray-700 text-left font-medium transition-colors border-l-4 border-transparent">Task 3: Vigenère Analysis</button>
+            <button id="nav-task4" class="tab-btn p-3 bg-gray-800 rounded hover:bg-gray-700 text-left font-medium transition-colors border-l-4 border-transparent">Task 4: DES (Manual)</button>
+            <button id="nav-task5" class="tab-btn p-3 bg-gray-800 rounded hover:bg-gray-700 text-left font-medium transition-colors border-l-4 border-transparent">Task 5: AES (Manual)</button>
+        </nav>
+        -->
+        <!-- Tool Area -->
+        <main class="flex-1 bg-gray-800 rounded-lg shadow-xl border border-gray-700 flex flex-col">
+            
+            <!-- Dynamic Content -->
+            <div id="content-area" class="p-6 flex-1 flex flex-col gap-4">
+                <!-- Content will be injected by main.js -->
+            </div>
+
+            <!-- Output Console (Shared) -->
+            <div class="p-6 border-t border-gray-700 bg-gray-900/50">
+                <div class="flex justify-between items-center mb-2">
+                    <label class="font-bold text-green-400 text-sm">OUTPUT / RESULT</label>
+                    <div class="flex gap-2 text-xs">
+                        <button id="btn-copy" class="text-gray-400 hover:text-white">Copy</button>
+                        <button id="btn-clear" class="text-gray-400 hover:text-red-400">Clear</button>
+                        <button id="btn-download" class="text-gray-400 hover:text-blue-400 font-bold">Download</button>
+                        <select id="output-format" class="bg-gray-800 border border-gray-600 rounded px-2 py-1">
+                            <option value="text">Text (UTF-8)</option>
+                            <option value="hex">Hex</option>
+                            <option value="base64">Base64</option>
+                        </select>
+                    </div>
+                </div>
+                <textarea id="main-output" class="w-full h-40 bg-gray-950 text-green-500 font-mono text-sm p-3 rounded border border-gray-700 focus:border-blue-500 focus:outline-none resize-y" readonly placeholder="Kết quả sẽ hiển thị ở đây..."></textarea>
+                <div id="status-bar" class="mt-2 text-xs text-gray-500 h-4">Ready</div>
+            </div>
+        </main>
+    </div>
+
+    <!-- MAIN SCRIPT (MODULE) -->
+    <script type="module" src="./js/main.js"></script>
+</body>
+</html>
